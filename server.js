@@ -11,8 +11,8 @@ server.use(helmet())
 server.use(express.json())
 server.use(cors())
 
-server.use(authRouter)
 server.use("/api/users", userRouter)
+server.use(authRouter)
 
 server.get("/", (req, res) => {
   res.send("Welcome to webauth-I-challenge!")
