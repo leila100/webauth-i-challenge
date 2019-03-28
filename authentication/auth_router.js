@@ -14,7 +14,7 @@ router.post("/api/register", async (req, res) => {
     try {
       user = await userDB.addUser({ username, password: hash })
       if (user) res.status(201).json(user)
-      else res.status(500).json({ message: "Invalid Credentials" })
+      else res.status(401).json({ message: "Invalid Credentials" })
     } catch {
       res.status(500).json({ message: "Ran into an unexpected error" })
     }

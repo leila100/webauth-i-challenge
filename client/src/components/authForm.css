@@ -99,6 +99,7 @@ a {
 }
 .login-form .group .button {
   background: #1161ee;
+  cursor: pointer;
 }
 
 .login-form .group .check:checked + label {
