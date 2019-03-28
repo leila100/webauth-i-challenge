@@ -18,7 +18,7 @@ class UsersList extends Component {
       .catch(err => {
         const message = err.response
           ? err.response.data.message
-          : "There was a problem with the registration, please try again."
+          : "There was a problem with the authentication, please try again."
         this.setState({ message: message })
       })
   }
@@ -28,7 +28,7 @@ class UsersList extends Component {
       <ul>
         {this.state.message && <h2>{this.state.message}</h2>}
         {this.state.users.map(user => (
-          <li>
+          <li key={user.id}>
             <div>Username: {user.username}</div>
             <div>password: {user.password}</div>
             <hr />
