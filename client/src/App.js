@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 
 import Nav from "./components/Nav"
 import AuthForm from "./components/authenticate"
+import UsersList from "./components/UsersList"
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Nav />
         <h1>Welcome to webauth-I-Challenge!</h1>
         <Route path='/authenticate' component={AuthForm} />
+        <Route path='/users' component={UsersList} />
       </div>
     )
   }

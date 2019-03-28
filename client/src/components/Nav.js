@@ -10,7 +10,7 @@ const Nav = () => {
         <NavLink to='/authenticate'>Register/login</NavLink>
       </Links>
       <Links>
-        <NavLink to='/api/restricted/users'>Users</NavLink>
+        <NavLink to='/users'>Users</NavLink>
       </Links>
     </NavbarWrapper>
   )
