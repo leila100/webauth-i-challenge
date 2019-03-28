@@ -7,10 +7,7 @@ const Nav = () => {
   return (
     <NavbarWrapper>
       <Links>
-        <NavLink to='/api/register'>Register</NavLink>
-      </Links>
-      <Links>
-        <NavLink to='/api/login'>Login</NavLink>
+        <NavLink to='/authenticate'>Register/login</NavLink>
       </Links>
       <Links>
         <NavLink to='/api/restricted/users'>Users</NavLink>

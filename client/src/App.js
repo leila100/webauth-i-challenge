@@ -1,8 +1,8 @@
 import React, { Component } from "react"
+import { Route } from "react-router-dom"
 
 import Nav from "./components/Nav"
-
-import "./App.css"
+import AuthForm from "./components/authenticate"
 
 class App extends Component {
   render() {
@@ -10,6 +10,7 @@ class App extends Component {
       <div className='App'>
         <Nav />
         <h1>Welcome to webauth-I-Challenge!</h1>
+        <Route path='/authenticate' component={AuthForm} />
       </div>
     )
   }

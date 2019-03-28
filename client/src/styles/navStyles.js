@@ -12,8 +12,9 @@ export const NavbarWrapper = styled(Flex)`
   top: 0;
   left: 0;
   border-bottom: 1px solid #3f0122;
-  background-color: black;
+  background-color: #3d4c74;
   z-index: 5;
+  padding: 20px;
 `
 export const Links = styled(Flex)`
   justify-content: space-evenly;
@@ -27,6 +28,7 @@ export const Links = styled(Flex)`
   }
 
   .active {
-    border-bottom: 3px solid #33ccff;
+    border-bottom: 3px solid #1161ee;
+    padding-bottom: 10px;
   }
 `
