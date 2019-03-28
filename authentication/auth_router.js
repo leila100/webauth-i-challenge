@@ -35,7 +35,7 @@ router.post("/api/login", async (req, res) => {
         res.status(401).json({ message: "Invalid Credentials" })
       }
     } catch (error) {
-      res.status(500).json(error)
+      res.status(500).json({ message: "Can't login" })
     }
   }
 })

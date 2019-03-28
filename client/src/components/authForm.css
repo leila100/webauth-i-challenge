@@ -130,3 +130,9 @@ a {
 .foot-lnk label {
   cursor: pointer;
 }
+
+.message {
+  color: #1161ee;
+  text-align: center;
+  font-size: 35px;
+}
