@@ -19,57 +19,24 @@ export const Auth = styled.div`
   background: rgba(40, 57, 101, 0.9);
 `
 
-export const Tab = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  transition: all 0.4s linear;
-`
-
-export const TabLabel = styled.label`
-  font-size: 22px;
-  margin-right: 15px;
-  padding-bottom: 5px;
-  margin: 0 15px 10px 0;
-  display: inline-block;
-  border-bottom: 2px solid transparent;
-`
-
-export const TabRadio = styled.input`
-  checked {
-    color: #fff;
-    border-color: #1161ee;
-  }
-`
-
-export const Form = styled.form`
-  min-height: 345px;
-  position: relative;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-`
-
 export const Group = styled.div`
   margin-bottom: 15px;
 
-  label,
-  input,
-  button {
+  input {
     width: 100%;
     color: #fff;
     display: block;
-  }
-
-  input,
-  button {
     border: none;
     padding: 15px 20px;
     border-radius: 25px;
     background: rgba(255, 255, 255, 0.1);
+    outline: none;
+  }
+
+  input[type="submit"] {
+    background: #1161ee;
+    cursor: pointer;
+    text-transform: uppercase;
   }
 
   input[data-type="password"] {
@@ -79,6 +46,34 @@ export const Group = styled.div`
 `
 
 export const Label = styled.label`
-  color: #aaa;
   font-size: 12px;
+  text-transform: uppercase;
+  width: 100%;
+  color: #fff;
+  display: block;
+`
+
+export const Password = styled.input`
+  text-security: circle;
+  -webkit-text-security: circle;
+`
+
+export const HR = styled.hr`
+  height: 2px;
+  margin: 60px 0 50px 0;
+  background: rgba(255, 255, 255, 0.2);
+`
+
+export const Footer = styled.div`
+  text-align: center;
+
+  label {
+    cursor: pointer;
+  }
+`
+
+export const Message = styled.h2`
+  color: #1161ee;
+  text-align: center;
+  font-size: 35px;
 `

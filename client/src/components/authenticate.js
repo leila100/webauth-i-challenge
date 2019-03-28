@@ -1,6 +1,16 @@
 import React, { Component } from "react"
 import axios from "axios"
 
+import {
+  AuthWrapper,
+  Password,
+  Label,
+  HR,
+  Footer,
+  Message,
+  Group
+} from "../styles/formStyles"
+
 import "./authForm.css"
 
 class Authenticate extends Component {
@@ -11,7 +21,6 @@ class Authenticate extends Component {
       password: "",
       registerUsername: "",
       registerPassword: "",
-      email: "",
       message: "",
       checked: true
     }
@@ -36,7 +45,7 @@ class Authenticate extends Component {
       .catch(err => {
         const message = err.response
           ? err.response.data.message
-          : "There was a problem with the registration, please try again."
+          : "There was a problem with the login, please try again."
         this.setState({
           message: message,
           username: "",
@@ -79,10 +88,8 @@ class Authenticate extends Component {
   render() {
     return (
       <>
-        {this.state.message && (
-          <h2 className='message'>{this.state.message}</h2>
-        )}
-        <div className='login-wrap'>
+        {this.state.message && <Message>{this.state.message}</Message>}
+        <AuthWrapper>
           <div className='login-html'>
             <input
               id='tab-1'
@@ -108,10 +115,10 @@ class Authenticate extends Component {
             </label>
             <div className='login-form'>
               <form className='sign-in-htm' onSubmit={this.loginHandler}>
-                <div className='group'>
-                  <label htmlFor='user' className='label'>
+                <Group>
+                  <Label htmlFor='user' className='label'>
                     Username
-                  </label>
+                  </Label>
                   <input
                     id='user'
                     type='text'
@@ -121,12 +128,12 @@ class Authenticate extends Component {
                     onChange={this.saveInput}
                     autoComplete='off'
                   />
-                </div>
-                <div className='group'>
-                  <label htmlFor='pass' className='label'>
+                </Group>
+                <Group>
+                  <Label htmlFor='pass' className='label'>
                     Password
-                  </label>
-                  <input
+                  </Label>
+                  <Password
                     id='pass'
                     type='password'
                     className='input'
@@ -135,16 +142,16 @@ class Authenticate extends Component {
                     value={this.state.password}
                     onChange={this.saveInput}
                   />
-                </div>
-                <div className='group'>
+                </Group>
+                <Group>
                   <input type='submit' className='button' value='Login' />
-                </div>
+                </Group>
               </form>
               <form className='sign-up-htm' onSubmit={this.registerHandler}>
-                <div className='group'>
-                  <label htmlFor='user' className='label'>
+                <Group>
+                  <Label htmlFor='user' className='label'>
                     Username
-                  </label>
+                  </Label>
                   <input
                     id='user'
                     type='text'
@@ -154,12 +161,12 @@ class Authenticate extends Component {
                     onChange={this.saveInput}
                     autoComplete='off'
                   />
-                </div>
-                <div className='group'>
-                  <label htmlFor='pass' className='label'>
+                </Group>
+                <Group>
+                  <Label htmlFor='pass' className='label'>
                     Password
-                  </label>
-                  <input
+                  </Label>
+                  <Password
                     id='pass'
                     type='password'
                     className='input'
@@ -168,32 +175,18 @@ class Authenticate extends Component {
                     value={this.state.registerPassword}
                     onChange={this.saveInput}
                   />
-                </div>
-                <div className='group'>
-                  <label htmlFor='pass' className='label'>
-                    Email Address
-                  </label>
-                  <input
-                    id='pass'
-                    type='email'
-                    className='input'
-                    name='email'
-                    value={this.state.email}
-                    onChange={this.saveInput}
-                    autoComplete='off'
-                  />
-                </div>
-                <div className='group'>
+                </Group>
+                <Group>
                   <input type='submit' className='button' value='Sign Up' />
-                </div>
-                <div className='hr' />
-                <div className='foot-lnk'>
+                </Group>
+                <HR />
+                <Footer>
                   <label htmlFor='tab-1'>Already Member?</label>
-                </div>
+                </Footer>
               </form>
             </div>
           </div>
-        </div>
+        </AuthWrapper>
       </>
     )
   }
