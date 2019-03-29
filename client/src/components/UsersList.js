@@ -9,10 +9,9 @@ class UsersList extends Component {
 
   componentDidMount = () => {
     axios
-      .get("http://localhost:8080/api/restricted/users", {
-        headers: { username: "Leila", password: "password" }
-      })
+      .get("http://localhost:8080/api/users")
       .then(response => {
+        console.log("response: ", response.data)
         this.setState({ users: response.data })
       })
       .catch(err => {
