@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  color: #6a6f8c;
+  background: #c8c8c8;
+  font: 600 16px/18px "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
+}
+
+.App {
+  margin-top: 100px;
+}
+
+.App h1,
+.App h2 {
+  text-align: center;
+}
+
+.App h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: black;
+  font-size: 45px;
+}
