@@ -33,6 +33,7 @@ class Authenticate extends Component {
   loginHandler = event => {
     event.preventDefault()
     const { username, password } = this.state
+    axios.defaults.withCredentials = true
     axios
       .post("http://localhost:8080/api/login", { username, password })
       .then(response => {

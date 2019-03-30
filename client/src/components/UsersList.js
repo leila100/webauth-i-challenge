@@ -8,6 +8,7 @@ class UsersList extends Component {
   }
 
   componentDidMount = () => {
+    axios.defaults.withCredentials = true
     axios
       .get("http://localhost:8080/api/users")
       .then(response => {

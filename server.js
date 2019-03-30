@@ -16,9 +16,9 @@ server.use(
     secret: "This is a secret!",
     cookie: {
       maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day in milliseconds
-      secure: false // only set cookies over https. if true, Server will not send back a cookie over http.
+      secure: false, // only set cookies over https. if true, Server will not send back a cookie over http.
+      httpOnly: false // don't let JS code access cookies. Browser extensions run JS code on your browser!
     },
-    httpOnly: true, // don't let JS code access cookies. Browser extensions run JS code on your browser!
     resave: false,
     saveUninitialized: false,
 
@@ -31,9 +31,32 @@ server.use(
     })
   })
 )
+
+server.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000")
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization,  X-PINGOTHER"
+  )
+  res.header("Access-Control-Allow-Credentials", true)
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS"
+  )
+  next()
+})
+
 server.use(helmet())
 server.use(express.json())
-server.use(cors())
+// server.use(cors())
+
+const origin = "http://localhost:3000"
+server.use(
+  cors({
+    credentials: true,
+    origin
+  })
+)
 
 server.use("/api/users", restricted, userRouter)
 server.use(authRouter)
