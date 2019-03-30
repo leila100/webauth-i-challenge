@@ -12,6 +12,9 @@ const Nav = () => {
       <Links>
         <NavLink to='/users'>Users</NavLink>
       </Links>
+      <Links>
+        <NavLink to='/logout'>Logout</NavLink>
+      </Links>
     </NavbarWrapper>
   )
 }

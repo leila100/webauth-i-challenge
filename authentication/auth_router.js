@@ -42,4 +42,16 @@ router.post("/api/login", async (req, res) => {
   }
 })
 
+router.get("/api/logout", (req, res) => {
+  if (req.session) {
+    req.session.destroy(err => {
+      if (err) {
+        res.send({ message: "error logging out" })
+      } else {
+        res.send({ message: "good bye" })
+      }
+    })
+  }
+})
+
 module.exports = router

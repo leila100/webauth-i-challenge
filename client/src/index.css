@@ -27,6 +27,11 @@ a {
   margin-top: 100px;
 }
 
+.App h1,
+.App h2 {
+  text-align: center;
+}
+
 .App h1 {
   text-align: center;
   margin-bottom: 50px;
